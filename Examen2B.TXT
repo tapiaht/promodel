@@ -1,0 +1,70 @@
+********************************************************************************
+*                                                                              *
+*                        Listado del modelo formateado:                        *
+*                           D:\Promodel\Examen2B.mod                           *
+*                                                                              *
+********************************************************************************
+
+  Unidades de Tiempo:                Minutos
+  Unidades de Distancia:             Pies
+  Lógica de Inicialización:          Animate 10
+                                     Display "Iniciando la simulación"
+                                     
+  Lógica de Terminación:             Display "Fin de la simulación"
+                                     
+
+
+********************************************************************************
+*                                  Locaciones                                  *
+********************************************************************************
+
+  Nombre      Cap Unidades Estadist         Reglas             Costos      
+  ----------- --- -------- ---------------- ------------------ ------------
+  Torno       1   1        Series de tiempo Más Tiempo, ,                  
+  Inspeccion  1   1        Series de tiempo Más Tiempo, ,                  
+  Frezadora   15  1        Series de tiempo Más Tiempo, ,                  
+  Linea_Barra 10  1        Series de tiempo Más Tiempo, FIFO,              
+  Linea_Placa 10  1        Series de tiempo Más Tiempo, FIFO,              
+
+
+********************************************************************************
+*                                  Entidades                                   *
+********************************************************************************
+
+  Nombre     Velocidad (Ppm) Estadist         Costos      
+  ---------- ------------ ---------------- ------------
+  Barra      150          Series de tiempo             
+  Placa      150          Series de tiempo             
+
+
+********************************************************************************
+*                                Procesamiento                                 *
+********************************************************************************
+
+                                Proceso              Enrutamiento
+
+ Entidad  Locación    Operación            Blk  Salida   Destino    Regla    Lógica de Movimiento
+ -------- ----------- ------------------   ---- -------- ---------- -------  ------------
+ Barra    Linea_Barra                      1    Barra    Torno      FIRST 1  
+ Barra    Torno       Wait n(5,1) min
+                      Graphic 2
+                                           1    Barra    Inspeccion FIRST 1  Move For 2 min
+                                                                             
+ Barra    Inspeccion  Wait u(4,2) min
+                                           1    Barra    EXIT       FIRST 1  
+ Placa    Linea_Placa                      1    Placa    Frezadora  FIRST 1  
+ Placa    Frezadora   Wait t(2,4,7) min
+                      Graphic 2            1    Placa    Inspeccion FIRST 1  Move For 2 min
+ Placa    Inspeccion  Wait u(6,1) min      1    Placa    EXIT       FIRST 1  
+
+
+********************************************************************************
+*                                   Arribos                                    *
+********************************************************************************
+
+  Entidad  Locación    Cant. por Arribo Primera Vez Ocurrencias Frecuencia Lógica
+  -------- ----------- ---------------- ----------- ----------- ---------- ------------
+  Barra    Linea_Barra 1                0           INF         E(3) min   
+  Placa    Linea_Placa 1                0           INF         u(5,1) min 
+
+

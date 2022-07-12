@@ -1,0 +1,57 @@
+********************************************************************************
+*                                                                              *
+*                        Listado del modelo formateado:                        *
+*                           D:\Promodel\Examen2A.mod                           *
+*                                                                              *
+********************************************************************************
+
+  Unidades de Tiempo:                Segundos
+  Unidades de Distancia:             Pies
+
+
+********************************************************************************
+*                                  Locaciones                                  *
+********************************************************************************
+
+  Nombre          Cap Unidades Estadist         Reglas         Costos      
+  --------------- --- -------- ---------------- -------------- ------------
+  Caseta_de_Cobro 1   1        Series de tiempo Más Tiempo, ,              
+  Autopista       1   1        Series de tiempo Más Tiempo, ,              
+
+
+********************************************************************************
+*                                  Entidades                                   *
+********************************************************************************
+
+  Nombre     Velocidad (Ppm) Estadist         Costos      
+  ---------- ------------ ---------------- ------------
+  Automovil  150          Series de tiempo             
+  Camion     150          Series de tiempo             
+
+
+********************************************************************************
+*                                Procesamiento                                 *
+********************************************************************************
+
+                                     Proceso                    Enrutamiento
+
+ Entidad   Locación        Operación            Blk  Salida    Destino         Regla    Lógica de Movimiento
+ --------- --------------- ------------------   ---- --------- --------------- -------  ------------
+ Automovil Autopista                            1    Automovil Caseta_de_Cobro FIRST 1  
+ Automovil Caseta_de_Cobro Wait u(20,10) sec
+                                                1    Automovil EXIT            FIRST 1  
+ Camion    Autopista                            1    Camion    Caseta_de_Cobro FIRST 1  
+ Camion    Caseta_de_Cobro Wait u(60,20) sec
+                                                1    Camion    EXIT            FIRST 1  
+
+
+********************************************************************************
+*                                   Arribos                                    *
+********************************************************************************
+
+  Entidad   Locación  Cant. por Arribo Primera Vez Ocurrencias Frecuencia   Lógica
+  --------- --------- ---------------- ----------- ----------- ------------ ------------
+  Automovil Autopista 1                0           INF         U(25,10) sec 
+  Camion    Autopista 1                0           INF         u(60,20) sec 
+
+
