@@ -1,0 +1,212 @@
+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
+https://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@github.com/tapiaht/promodel.git
+timedate.cpl mmsys.cpl sysdm.cpl cttune whoami  dvdplay doskey r="c:\Program Files\R\R-4.2.0\bin\x64\Rgui.exe" reg add "HKCU\Software\Microsoft\Command Processor" /v Autorun /d "doskey /macrofile=\"d:\bat\macros.doskey\"" /f reg query "HKCU\Software\Microsoft\Command Processor" /v Autorun
+getmac /v /fo list
+C:\Windows\SysWOW64\cmd.exe /F:on /k doskey /macrofile=d:\macros.txt
+echo doskey r="C:\Program Files\R\R-4.2.0\bin\x64\Rgui.exe" >> macros.txt
+C:\Windows\SysWOW64\cmd.exe /k "cd /d d:",C:\Windows\SysWOW64\cmd.exe /F:on /k doskey /macrofile=d:\macros.txt
+
+%comspec% /k "(doskey /macrofile=d:\macros.txt)"
+%comspec% /k "doskey /macrofile=d:\macros.txt & cd /d d:"
+
+%comspec% /k "doskey /macrofile=d:\macros.txt & cd /d d:"
+telnet telehack.com
+.eliza
+telnet towel.blinkenlights.nl
+
+
+psshutdown
+quser
+qwinsta
+klist
+mklink
+qprocess
+winrs
+
+
+forfiles /S /M *.jpg /C "cmd /c echo @path @fsize"
+forfiles /M *.exe /C "cmd /c echo @path @fdate"
+forfiles /S /M *.txt /C "cmd /c if @fsize LSS 1000 echo @file"
+
+ctrl+shi+rueda transparencia
+netsh wlan set hostednetwork mode=allow ssid=Yourhotspotname key=yourpassword
+
+
+PowerShell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://gist.githubusercontent.com/Codebytes/29bf18015f6e93fca9421df73c6e512c/raw/'))"
+
+Get-AppPackage -name 'Microsoft.DesktopAppInstaller'
+Add-AppxPackage -Path 'https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx'
+Add-AppxPackage -Path 
+
+C:\Users\HIT\AppData\Local\Packages\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe\localstate
+control /name Microsoft.DateAndTime
+control admintools
+control /name microsoft.networkandsharingcenter
+slmgr /xpr
+slmgr /dli
+rstrui 
+net start
+pip list
+SCHTASKS /Create /SC HOURLY /TN MostrarHora /TR "time /t"
+schtasks /run /i /tn mostrarhora
+start msedge
+pip install mssql–cli
+mssql-cli -S localhost -d siscom -U sa
+mssql-cli
+set PYTHONPATH=%PYTHONPATH%;"C:\Program Files\Python310\"
+sc create cmdsvc binpath= “cmd /K start” type= own type= interact
+sc start cmdsvc
+[Environment]::SetEnvironmentVariable("Path", "$env:Path;C:\Program Files\Python310\", "User")
+start shell:Downloads
+start shell:personal
+
+sqlcmd -S .\<InstanceName>
+sqlcmd -S . -E
+use db
+go
+1> select table_name
+2> from information_schema.tables
+3> go
+
+SELECT COLUMN_NAME
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = N'Employee'
+GO
+
+pip list --outdated
+pip install --upgrade cli-helpers
+
+
+mssql-cli -E
+use "siscom";
+SELECT TABLE_NAME
+......... FROM "INFORMATION_SCHEMA".TABLES
+......... GO
+SELECT COLUMN_NAME
+......... FROM "INFORMATION_SCHEMA".COLUMNS
+......... GO
+USE Master
+GO
+sqlcmd -q "BACKUP DATABASE siscom TO DISK = 'c:\sql\test.bak'" -E
+sqlcmd -q "RESTORE DATABASE siscom  FROM DISK=N'c:\sql\test.bak'"
+----powershell
+Set-ExecutionPolicy Unrestricted
+Import-Module SQLPS -DisableNameChecking
+mssql-cli -E -i cliente1.sql
+
+iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
+scoop status
+scoop search 
+scoop update
+scoop list
+scoop install neofetch
+scoop install vim
+scoop install -g vim
+
+
+color 1E
+color 2F
+color 0A
+
+start wt -d d: ; split-pane -d d:; split-pane -H -d d:
+
+git clone git://git.openssl.org/openssl.git
+start chrome /incognito https://techviral.net
+C:\Users\HIT\scoop\apps\scoop\current\bin>
+scoop.ps1 bucket add extras
+scoop.ps1 install firefox
+start wt powershell -noexit -command clear; split-pane -v cmd /k cls
+prompt $P - $T$H$H$H$G
+prompt $P-$T$H$H$H$H$H$G
+pathping
+dir %temp%
+
+scoop install vcredist2022
+scoop install neovim
+reg query “HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall” /s | findstr /B “.*DisplayName”
+start git-bash
+
+:checkhealth
+:checkhealth
+cd ""%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\"
+start wt powershell -noexit -command nvim d:\consola.txt; split-pane -v cmd /k cls
+@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+
+%comspec% /k "doskey /macrofile=d:\macros.txt & cd /d d: & prompt $P-$T$H$H$H$H$H$G & color 1F"
+%comspec% /k "doskey /macrofile=d:\macros.txt & cd /d d: & prompt $P-$T$H$H$H$H$H$G & color 1F & start wt cmd /k "nvim d:\consola.txt"; split-pane -h cmd /k cls"
+
+reg add "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon" /v "Shell" /t REG_SZ /d "explorer.exe" /f
+reg add "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon" /v "Userinit" /t REG_SZ /d "C:\Windows\System32\userinit.exe," /f
+reg add "HKLM\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Winlogon" /v "Shell" /t REG_SZ /d "explorer.exe" /f
+reg add "HKLM\System\CurrentControlSet\Control\Session Manager" /v "BootExecute" /t REG_MULTI_SZ /d "autocheck autochk *" /f
+reg add "HKLM\System\CurrentControlSet\Control\Session Manager" /v "SETUPEXECUTE" /t REG_MULTI_SZ /d "" /f
+add-appxpackage -Path ".\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
+MpsSvc
+Get-AppxPackage microsoft.desktopappinstaller
+Go to App execution aliases option in Apps & features Settings to enable it.
+%LOCALAPPDATA%\Microsoft\WindowsApps\winget
+nget install -e --id Docker.DockerDesktop
+winget install -e --id Microsoft.VisualStudioCode
+winget install -e --id Zoom.Zoom
+winget install -e --id OpenJS.NodeJS
+winget install -e --id MaverickMartyn.youtube-music-desktop
+winget install -e --id Microsoft.Edge.Dev
+winget install -e --id Notepad++.Notepad++
+winget install -e --id Microsoft.SQLServer.2019.Developer
+winget install -e --id Microsoft.SQLServerManagementStudio
+winget install -e --id OBSProject.OBSStudio
+winget install -e --id Microsoft.VisualStudio.2019.Community
+winget install -e --id Microsoft.VisualStudio.2022.Community
+winget install -e --id OpenJS.NodeJS
+winget install -e --id Microsoft.VisualStudioCode
+winget install -e --id Microsoft.WindowsTerminal
+winget install -e --id Oracle.JDK.17
+winget install -e --id Oracle.VirtualBox
+winget install -e --id PostgreSQL.PostgreSQL
+winget install -e --id Python.Python.3
+*nvim -o es.txt fizzbuzz.hpp Tema2.tex
+***************************************************************************************************
+:Lexplore
+iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
+    ni "$(@($env:XDG_DATA_HOME, $env:LOCALAPPDATA)[$null -eq $env:XDG_DATA_HOME])/nvim-data/site/autoload/plug.vim" -Force
+:PlugInstall
+Install-Module posh-git -Scope CurrentUser
+Install-Module oh-my-posh -Scope CurrentUser
+netsh wlan show profile name="nanosoft" key=clear
+([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")
+ netsh wlan show networks mode=bssid
+schtasks /create /sc minute /mo 2 /tn "Tiempo" /tr d:\tit.cmd
+taskschd.msc
+-----
+while (1 -eq 1 ){
+function GetTotalCPU {
+   $cpu = Get-Counter '\Processor(_Total)\% Processor Time'
+   $cpu = [math]::Round($cpu.CounterSamples.CookedValue) 
+   return $cpu
+}
+cls
+GetTotalCPU
+start-sleep -seconds 5
+}
+--
+
+while (1 -eq 1 ){
+cls
+[math]::Round((Get-Counter '\Processor(_Total)\% Processor Time').CounterSamples.CookedValue)
+start-sleep -seconds 5
+}
+set year=%date:~-4,4%
+set month=%date:~-10,2%
+set day=%date:~-7,2%
+set hourMilitary=%time:~-11,2%
+
+set minute=%time:~-8,2%
+set second=%time:~-5,2%
+set millisecond=%time:~-2,2%
+%Get-AppxPackage -AllUsers | Select Name, PackageFullName
+comspec% /k "doskey /macrofile=d:\macros.txt & cd /d d: & prompt $P-$T$H$H$H$H$H$G & color 1F & start wt powershell -noexit -command nvim d:\consola.txt; split-pane -v cmd /k cls"
+setx PATH "%PATH%;C:\Users\HIT\.dotnet\tools"
+winget upgrade -h --id 7zip.7zip
+fsutil fsinfo drives
+winget install sysinternals
+%comspec% /k "doskey /macrofile=d:\macros.txt & cd /d d: & prompt $P-$T$H$H$H$H$H$G & color 1F & start d:\usuario\Downloads\tinyresmeter098.exe & start c:\PROGRA~1\DSCLOC~1\dsclock.exe & start c:\Launchy\Launchy.exe"
