@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Calendar>
+  <Version>3.2.0.0</Version>
+  <DisplayDate>7/12/2022 2:27:52 PM</DisplayDate>
+  <Shifts>
+    <BaseShift>
+      <Name>Turno Base</Name>
+      <Guid>93b13105-a035-49e5-aba3-594b0d4508c5</Guid>
+      <Color>-1</Color>
+      <Data>s:1.7.0-1.18.0</Data>
+      <Data>b:1.12.0-1.13.0</Data>
+      <Data>s:2.7.0-2.18.0</Data>
+      <Data>b:2.12.0-2.13.0</Data>
+      <Data>s:3.7.0-3.18.0</Data>
+      <Data>b:3.12.0-3.13.0</Data>
+      <Data>s:4.7.0-4.18.0</Data>
+      <Data>b:4.12.0-4.13.0</Data>
+      <Data>s:5.7.0-5.18.0</Data>
+      <Data>b:5.12.0-5.13.0</Data>
+    </BaseShift>
+  </Shifts>
+  <Exceptions>
+    <Exception>
+      <Start>7/1/2022 12:00:00 AM</Start>
+      <Finish>9/1/2022 12:00:00 AM</Finish>
+      <Type>Holiday</Type>
+    </Exception>
+  </Exceptions>
+</Calendar>
