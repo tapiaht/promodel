@@ -1,0 +1,212 @@
+********************************************************************************
+*                                                                              *
+*                        Listado del modelo formateado:                        *
+*                   D:\Promodel\Proyecto\Proyecto Final.mod                    *
+*                                                                              *
+********************************************************************************
+
+  Unidades de Tiempo:                Minutos
+  Unidades de Distancia:             Pies
+  Lógica de Inicialización:          Animate 10
+                                     Display "Bienvenido al Sistema"
+                                     
+  Lógica de Terminación:             // CalDay()
+                                     
+
+
+********************************************************************************
+*                                  Locaciones                                  *
+********************************************************************************
+
+  Nombre      Cap Unidades Estadist         Reglas         Costos      
+  ----------- --- -------- ---------------- -------------- ------------
+  Ingreso     1   1        Series de tiempo Más Tiempo, ,              
+  Sala_Espera 6   1        Series de tiempo Más Tiempo, ,              
+  Recepcion   1   1        Series de tiempo Más Tiempo, ,              
+  Kardex      1   1        Series de tiempo Más Tiempo, ,              
+  Psicologia  1   1        Series de tiempo Más Tiempo, ,              
+  Tecnica     1   1        Series de tiempo Más Tiempo, ,              
+  Gerencia    1   1        Series de tiempo Más Tiempo, ,              
+  Revision    1   1        Series de tiempo Más Tiempo, ,              
+
+
+********************************************************************************
+*                                  Entidades                                   *
+********************************************************************************
+
+  Nombre     Velocidad (Ppm) Estadist         Costos      
+  ---------- ------------ ---------------- ------------
+  Postulante 50           Series de tiempo             
+
+
+********************************************************************************
+*                                Redes de Ruta                                 *
+********************************************************************************
+
+  Nombre   Tipo          T/V                   Desde     Hasta    BI   Distancia/Tiempo Factor de Velocidad
+  -------- ------------- --------------------- --------- -------- ---- ---------------- ------------
+  Red1     Sobrepasar    Velocidad & Distancia N1ingreso N2L0     Bi   14.94            1
+                                               N2L0      N4L1     Bi   12.45            1
+                                               N4L1      N6       Bi   32.87            1
+                                               N6        N7L3     Bi   41.86            1
+                                               N6        N8L4     Bi   27.14            1
+                                               N6        N9L5     Bi   43.71            1
+                                               N4L1      N3L2     Bi   34.54            1
+
+
+********************************************************************************
+*                                  Interfaces                                  *
+********************************************************************************
+
+  Red        Nodo       Locación    
+  ---------- ---------- -----------
+  Red1       N1ingreso  Ingreso     
+             N2L0       Sala_Espera 
+             N4L1       Recepcion   
+             N7L3       Kardex      
+             N8L4       Psicologia  
+             N9L5       Tecnica     
+             N3L2       Gerencia    
+
+
+********************************************************************************
+*                                    Mapeo                                     *
+********************************************************************************
+
+  Red        Desde      Hasta      Dest
+  ---------- ---------- ---------- ------------
+  Red1       N4L1       N2L0       
+             N6         N4L1       
+             N4L1       N6         
+             N6         N7L3       
+             N6         N8L4       
+             N6         N9L5       
+             N4L1       N3L2       
+
+
+********************************************************************************
+*                                   Recursos                                   *
+********************************************************************************
+
+                              Rec         Ent                                              
+  Nombre     Unidades Estadíst   Buscar      Buscar     Ruta       Movimiento     Costos      
+  ---------- ----- ---------- ----------- ---------- ---------- -------------- ------------
+  Secretaria 1     Por Unidad Más Cercano Más Tiempo Red1       Vacío: 150 Ppm             
+                                                     Home: N4L1 Lleno: 150 Ppm             
+                                                     (Regresar)                            
+
+  Planillero 1     Por Unidad Más Cercano Más Tiempo Red1       Vacío: 150 Ppm             
+                                                     Home: N7L3 Lleno: 150 Ppm             
+                                                     (Regresar)                            
+
+  Doctora    1     Por Unidad Más Cercano Más Tiempo Red1       Vacío: 150 Ppm             
+                                                     Home: N8L4 Lleno: 150 Ppm             
+                                                     (Regresar)                            
+
+  Operador   1     Por Unidad Más Cercano Más Tiempo Red1       Vacío: 150 Ppm             
+                                                     Home: N9L5 Lleno: 150 Ppm             
+                                                     (Regresar)                            
+
+  Gerente    1     Por Unidad Más Cercano Más Tiempo Red1       Vacío: 150 Ppm             
+                                                     Home: N3L2 Lleno: 150 Ppm             
+                                                     (Regresar)                            
+
+
+********************************************************************************
+*                                Procesamiento                                 *
+********************************************************************************
+
+                                  Proceso                 Enrutamiento
+
+ Entidad    Locación    Operación            Blk  Salida     Destino     Regla    Lógica de Movimiento
+ ---------- ----------- ------------------   ---- ---------- ----------- -------  ------------
+ Postulante Ingreso                          1    Postulante Sala_Espera FIRST 1  
+ Postulante Sala_Espera Wait u(2,1) min
+                                             1    Postulante Recepcion   FIRST 1  Move For 1 min
+ Postulante Recepcion   Wait u(2,1) min      1    Postulante Kardex      FIRST 1  Move For 1 min
+ Postulante Kardex      Wait u(10,2) min
+                        GRAPHIC 2
+                        
+                                             1    Postulante Psicologia  FIRST 1  Move For 2
+ Postulante Psicologia  Wait u(30,10) min
+                        GRAPHIC 3
+                        vPt=Rand(100)
+                        vPt = Round(vPt)
+                        vDoc=Entries(Psicologia)
+                        If vPt >= 50 Then
+                        {
+                        	Route 1
+                        }
+                        Else
+                        {
+                        	Route 2	
+                        }
+                        
+                        
+                        
+                                             1    Postulante Tecnica     FIRST 1  Move For 2 min
+                                                                                  
+                                             2    Postulante Revision    FIRST 1  
+ Postulante Tecnica     Wait u(30,7) min
+                        GRAPHIC 4
+                        vPt2=Rand(100)
+                        vPt2 = Round(vPt2)
+                        vTec=Entries(Tecnica)
+                        
+                        
+                        
+                        
+                                             1    Postulante Revision    FIRST 1  Move For 5 min
+ Postulante Revision    Wait u(15,5) min
+                        vPt=(vPt+vPt2)/2
+                        If vPt >= 70 Then
+                        {
+                        	Route 1
+                        }
+                        Else
+                        {
+                        	vTotal_Rechazados=vTotal_Rechazados+1
+                        	Route 2
+                        }
+                        vPt=0
+                        vPt2=0
+                        
+                                             1    Postulante Gerencia    FIRST 1  Move For 5 min
+                                             2    Postulante EXIT        FIRST 1  
+ Postulante Gerencia    vTotal_Aceptados=Entries(Gerencia)
+                        Wait U(30,5) min     1    Postulante EXIT        FIRST 1  Move For 2 min
+
+
+********************************************************************************
+*                                   Arribos                                    *
+********************************************************************************
+
+  Entidad    Locación Cant. por Arribo Primera Vez Ocurrencias Frecuencia Lógica
+  ---------- -------- ---------------- ----------- ----------- ---------- ------------
+  Postulante Ingreso  5                0           INF         4 HR       
+
+
+********************************************************************************
+*                                  Atributos                                   *
+********************************************************************************
+
+  ID         Tipo         Clasificación
+  ---------- ------------ -------------
+  aPt        Integer      Entidad      
+  aPt_ID     Integer      Entidad      
+
+
+********************************************************************************
+*                              Variables (global)                              *
+********************************************************************************
+
+  ID                Tipo         Valor Inicial Estadist        
+  ----------------- ------------ ------------- ----------------
+  vPt               Real         0             Series de tiempo
+  vPt2              Real         0             Series de tiempo
+  vTotal_Aceptados  Integer      0             Series de tiempo
+  vTotal_Rechazados Integer      0             Series de tiempo
+  vDoc              Integer      0             Series de tiempo
+  vTec              Integer      0             Series de tiempo
+
+

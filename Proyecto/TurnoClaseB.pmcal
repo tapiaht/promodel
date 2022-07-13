@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Calendar>
+  <Version>3.2.0.0</Version>
+  <DisplayDate>7/13/2022 1:20:29 AM</DisplayDate>
+  <Shifts>
+    <BaseShift>
+      <Name>Base Shift</Name>
+      <Guid>9c804ded-9d2d-4007-8511-e0f3275bfdd5</Guid>
+      <Color>-1</Color>
+      <Data>s:1.18.55-1.21.50</Data>
+      <Data>s:2.18.55-2.21.50</Data>
+      <Data>s:3.18.55-3.21.50</Data>
+      <Data>s:4.18.55-4.21.50</Data>
+      <Data>s:5.18.55-5.21.50</Data>
+    </BaseShift>
+  </Shifts>
+  <Exceptions />
+</Calendar>

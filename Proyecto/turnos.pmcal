@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Calendar>
+  <Version>3.2.0.0</Version>
+  <DisplayDate>7/13/2022 1:35:44 AM</DisplayDate>
+  <Shifts>
+    <BaseShift>
+      <Name>Base Shift</Name>
+      <Guid>744641db-4cb3-4c02-83c5-7886a88b9f33</Guid>
+      <Color>-1</Color>
+    </BaseShift>
+  </Shifts>
+  <Exceptions>
+    <Exception>
+      <Start>7/4/2022 12:00:00 AM</Start>
+      <Finish>7/9/2022 12:00:00 AM</Finish>
+      <Type>Holiday</Type>
+    </Exception>
+    <Exception>
+      <Start>7/11/2022 12:00:00 AM</Start>
+      <Finish>7/16/2022 12:00:00 AM</Finish>
+      <Type>Holiday</Type>
+    </Exception>
+    <Exception>
+      <Start>7/18/2022 12:00:00 AM</Start>
+      <Finish>7/23/2022 12:00:00 AM</Finish>
+      <Type>Holiday</Type>
+    </Exception>
+    <Exception>
+      <Start>7/25/2022 12:00:00 AM</Start>
+      <Finish>7/30/2022 12:00:00 AM</Finish>
+      <Type>Holiday</Type>
+    </Exception>
+    <Exception>
+      <Start>8/1/2022 12:00:00 AM</Start>
+      <Finish>8/6/2022 12:00:00 AM</Finish>
+      <Type>Holiday</Type>
+    </Exception>
+    <Exception>
+      <Start>8/8/2022 12:00:00 AM</Start>
+      <Finish>8/13/2022 12:00:00 AM</Finish>
+      <Type>Holiday</Type>
+    </Exception>
+    <Exception>
+      <Start>8/15/2022 12:00:00 AM</Start>
+      <Finish>8/20/2022 12:00:00 AM</Finish>
+      <Type>Holiday</Type>
+    </Exception>
+    <Exception>
+      <Start>8/22/2022 12:00:00 AM</Start>
+      <Finish>8/27/2022 12:00:00 AM</Finish>
+      <Type>Holiday</Type>
+    </Exception>
+  </Exceptions>
+</Calendar>
