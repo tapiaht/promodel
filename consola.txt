@@ -214,3 +214,5 @@ winget upgrade -h --id 7zip.7zip
 fsutil fsinfo drives
 winget install sysinternals
 %comspec% /k "doskey /macrofile=d:\macros.txt & cd /d d: & prompt $P-$T$H$H$H$H$H$G & color 1F & start d:\usuario\Downloads\tinyresmeter098.exe & start c:\PROGRA~1\DSCLOC~1\dsclock.exe & start c:\Launchy\Launchy.exe"
+boy famous patch gun mouse expire sting guide broccoli dentist student anchor margin option spy radio broccoli now north only convince sausage stool base
+
