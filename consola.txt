@@ -8,12 +8,13 @@ C:\Windows\SysWOW64\cmd.exe /k "cd /d d:",C:\Windows\SysWOW64\cmd.exe /F:on /k d
 oh-my-posh init pwsh | Invoke-Expression
 %comspec% /k "(doskey /macrofile=d:\macros.txt)"
 %comspec% /k "doskey /macrofile=d:\macros.txt & cd /d d:"
-
+Import-Module -Name Terminal-Icons
 %comspec% /k "doskey /macrofile=d:\macros.txt & cd /d d:"
 telnet telehack.com
+Import-Module -Name Terminal-Icons
 .eliza
 telnet towel.blinkenlights.nl
-
+oh-my-posh init pwsh | Invoke-Expression
 
 psshutdown
 quser
