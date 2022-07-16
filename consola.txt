@@ -1,7 +1,8 @@
 cd promodel
 git remote add origin "https://github.com/tapiaht/promodel.git"
 git pull origin master
-
+oh-my-posh init pwsh | Invoke-Expression
+Import-Module -Name Terminal-Icons
 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
 https://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@github.com/tapiaht/promodel.git
 timedate.cpl mmsys.cpl sysdm.cpl cttune whoami  dvdplay doskey r="c:\Program Files\R\R-4.2.0\bin\x64\Rgui.exe" reg add "HKCU\Software\Microsoft\Command Processor" /v Autorun /d "doskey /macrofile=\"d:\bat\macros.doskey\"" /f reg query "HKCU\Software\Microsoft\Command Processor" /v Autorun
