@@ -18,8 +18,16 @@ fsutil fsinfo drives
 telnet telehack.com
 .eliza
 telnet towel.blinkenlights.nl
-
-
+del /S /F /Q %temp%
+bcdedit /set disabledynamictick yes
+bcdedit /set useplatformtick yes
+bcdedit /set useplatformclock false
+fsutil behavior query memoryusage
+fsutil behavior set memoryusage 2
+bcdedit /set increaseuserva 1000
+REG add "HKCU\Control Panel" /v ForegroundLockTimeout /t REG_DWORD /d 0 /f
+REG add "HKCU\Control Panel" /v MenuShowDelay /t REG_SZ /d 100 /f
+REG add "HKLM\SYSTEM\CurrentControlSet\Control" /v WaitToKillServiceTimeout /t REG_SZ /d 5000 /f
 psshutdown
 quser
 qwinsta
