@@ -1,8 +1,3 @@
-cd promodel
-git remote add origin "https://github.com/tapiaht/promodel.git"
-git pull origin master
-oh-my-posh init pwsh | Invoke-Expression
-Import-Module -Name Terminal-Icons
 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
 https://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@github.com/tapiaht/promodel.git
 timedate.cpl mmsys.cpl sysdm.cpl cttune whoami  dvdplay doskey r="c:\Program Files\R\R-4.2.0\bin\x64\Rgui.exe" reg add "HKCU\Software\Microsoft\Command Processor" /v Autorun /d "doskey /macrofile=\"d:\bat\macros.doskey\"" /f reg query "HKCU\Software\Microsoft\Command Processor" /v Autorun
@@ -10,34 +5,16 @@ getmac /v /fo list
 C:\Windows\SysWOW64\cmd.exe /F:on /k doskey /macrofile=d:\macros.txt
 echo doskey r="C:\Program Files\R\R-4.2.0\bin\x64\Rgui.exe" >> macros.txt
 C:\Windows\SysWOW64\cmd.exe /k "cd /d d:",C:\Windows\SysWOW64\cmd.exe /F:on /k doskey /macrofile=d:\macros.txt
-<<<<<<< HEAD
-oh-my-posh init pwsh | Invoke-Expression
-=======
-fsutil fsinfo drives
->>>>>>> 238865f29f8ad5a1b492c3a4fad13227a63dc914
+
 %comspec% /k "(doskey /macrofile=d:\macros.txt)"
 %comspec% /k "doskey /macrofile=d:\macros.txt & cd /d d:"
-Import-Module -Name Terminal-Icons
+
 %comspec% /k "doskey /macrofile=d:\macros.txt & cd /d d:"
 telnet telehack.com
-Import-Module -Name Terminal-Icons
 .eliza
 telnet towel.blinkenlights.nl
-<<<<<<< HEAD
-oh-my-posh init pwsh | Invoke-Expression
 
-=======
-del /S /F /Q %temp%
-bcdedit /set disabledynamictick yes
-bcdedit /set useplatformtick yes
-bcdedit /set useplatformclock false
-fsutil behavior query memoryusage
-fsutil behavior set memoryusage 2
-bcdedit /set increaseuserva 1000
-REG add "HKCU\Control Panel" /v ForegroundLockTimeout /t REG_DWORD /d 0 /f
-REG add "HKCU\Control Panel" /v MenuShowDelay /t REG_SZ /d 100 /f
-REG add "HKLM\SYSTEM\CurrentControlSet\Control" /v WaitToKillServiceTimeout /t REG_SZ /d 5000 /f
->>>>>>> 238865f29f8ad5a1b492c3a4fad13227a63dc914
+
 psshutdown
 quser
 qwinsta
@@ -233,11 +210,3 @@ winget upgrade -h --id 7zip.7zip
 fsutil fsinfo drives
 winget install sysinternals
 %comspec% /k "doskey /macrofile=d:\macros.txt & cd /d d: & prompt $P-$T$H$H$H$H$H$G & color 1F & start d:\usuario\Downloads\tinyresmeter098.exe & start c:\PROGRA~1\DSCLOC~1\dsclock.exe & start c:\Launchy\Launchy.exe"
-<<<<<<< HEAD
-Set-WinUILanguageOverride en-US
-set-WinUserLanguageList es-ES -force
-Set-WinDefaultInputMethodOverride -InputTip "0c0a:0000040a"
-=======
-boy famous patch gun mouse expire sting guide broccoli dentist student anchor margin option spy radio broccoli now north only convince sausage stool base
-
->>>>>>> 238865f29f8ad5a1b492c3a4fad13227a63dc914
