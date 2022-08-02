@@ -15,6 +15,13 @@ oh-my-posh init pwsh | Invoke-Expression
 =======
 fsutil fsinfo drives
 >>>>>>> 238865f29f8ad5a1b492c3a4fad13227a63dc914
+ftype
+FORFILES /S /C "cmd /c if @fsize GTR 104857600 echo @path"
+forfiles /S /M *.jpeg/C "cmd /c renombrar @file @fname.png"
+fsutil file createnew file.txt 4000
+gpresult /R
+qappsrv
+winsat cpuformal
 %comspec% /k "(doskey /macrofile=d:\macros.txt)"
 %comspec% /k "doskey /macrofile=d:\macros.txt & cd /d d:"
 Import-Module -Name Terminal-Icons
