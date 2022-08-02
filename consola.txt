@@ -291,3 +291,4 @@ REG add "HKLM\SYSTEM\CurrentControlSet\Control" /v WaitToKillServiceTimeout /t R
 DONE!! Restart your PC.
 **********************git ************
 ssh-keygen -t rsa -b 4096 -C "hiver.tapia@uab.edu.bo"
+prueba de funcionamiento
