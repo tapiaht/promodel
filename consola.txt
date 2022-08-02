@@ -238,6 +238,47 @@ Set-WinUILanguageOverride en-US
 set-WinUserLanguageList es-ES -force
 Set-WinDefaultInputMethodOverride -InputTip "0c0a:0000040a"
 =======
-boy famous patch gun mouse expire sting guide broccoli dentist student anchor margin option spy radio broccoli now north only convince sausage stool base
 
 >>>>>>> 238865f29f8ad5a1b492c3a4fad13227a63dc914
+Set-ItemProperty -Confirm  -Path $RegPath -Name Shell -Value 'PowerShell.exe -noExit -Command "$psversiontable; cd $env:userprofile"'
+Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon' -name Shell -Value 'PowerShell.exe -noExit'
+$RegPath = "Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\winlogon"
+Set-ItemProperty -Confirm  -Path $RegPath -Name Shell -Value 'PowerShell.exe -noExit -Command "$psversiontable'
+--
+
+**First Commands:
+
+Del /S /F /Q %temp%
+(clears the Userprofile Temp folder)
+
+Del /S /F /Q %Windir%\Temp
+(This clears the Windows temp folder)
+
+bcdedit /set disabledynamictick yes
+(This command forces the kernel timer to constantly poll for interrupts instead of wait for them)
+
+bcdedit /set useplatformtick yes 
+(Forces the clock to be backed by a platform source, no synthetic timers are allowed)
+
+bcdedit /set useplatformclock false
+(TSC is reliable and will give you the lowest latency and highest fps)
+
+
+
+**Second Commands:
+
+fsutil behavior query memoryusage
+
+fsutil behavior set memoryusage 2
+
+bcdedit /set increaseuserva 8000
+
+
+
+**Third Commands:
+
+REG add "HKCU\Control Panel" /v ForegroundLockTimeout /t REG_DWORD /d 0 /f
+REG add "HKCU\Control Panel" /v MenuShowDelay /t REG_SZ /d 100 /f
+REG add "HKLM\SYSTEM\CurrentControlSet\Control" /v WaitToKillServiceTimeout /t REG_SZ /d 5000 /f
+
+DONE!! Restart your PC.
