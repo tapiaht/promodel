@@ -292,3 +292,4 @@ DONE!! Restart your PC.
 **********************git ************
 ssh-keygen -t rsa -b 4096 -C "hiver.tapia@uab.edu.bo"
 ****
+git config http.sslVerify "false"
