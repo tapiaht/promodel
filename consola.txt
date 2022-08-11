@@ -291,4 +291,16 @@ REG add "HKLM\SYSTEM\CurrentControlSet\Control" /v WaitToKillServiceTimeout /t R
 DONE!! Restart your PC.
 **********************git ************
 ssh-keygen -t rsa -b 4096 -C "hiver.tapia@uab.edu.bo"
+<<<<<<< HEAD
 prueba de funcionamiento
+=======
+****
+git config http.sslVerify "false"
+>>>>>>> 19c304b66bd56274b455ed8fb85cdcd902459cca
+Open Git Bash.
+ssh-keygen -t rsa -b 4096 -C "youremailaddress@xyz.com"
+clip < ~/.ssh/id_rsa.pub
+Browser, go to Github => Profile=> Settings => SSH and GPG keys => Add Key
+Provide the key name and paste clipboard (CTRL+V).
+Finally, test your connection (Git bash)
+ssh -T git@github.com
